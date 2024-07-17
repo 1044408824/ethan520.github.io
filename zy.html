@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Ethan</title>
+  </head>
+  <body>
+    <header>
+      <h1>Ethan</h1>
+      <nav>
+        <ul>
+          <li><a href="/zy.html">首页</a></li>
+          <li><a href="/zuopin/zuopin.html">作品</a></li>
+          <li><a href="/boke/boke.html">博客</a></li>
+          <li>
+            <a target="-blank" href="https://qm.qq.com/q/KKQOaTLVaW">联系我</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <h2>欢迎来到Ethan的网站</h2>
+        <p>
+          大家好！<br />我是Ethan，这里是一个展示我个人风采和分享想法的地方。(这可是我自己搭建的哦)
+        </p>
+        <div id="quote"></div>
+      </section>
+
+      <section id="about">
+        <h2>关于我</h2>
+        <p>我是[Ethan]，对[编程]充满热情。</p>
+        <p>在过去的[时间]里，我一直在[学习web前端开发]。</p>
+      </section>
+
+      <section id="portfolio">
+        <h2>作品</h2>
+        <div class="project">
+          <img
+            src="https://s2.loli.net/2024/07/14/4mjGwIKtJ2filu6.jpg"
+            alt="CatBox"
+          />
+          <h3>CatBox</h3>
+          <p>详细看作品</p>
+        </div>
+        <div class="project">
+          <img
+            src="https://s2.loli.net/2024/07/14/DBvNJ2n75uIGKwQ.jpg"
+            alt="阅读"
+          />
+          <h3>阅读</h3>
+          <p>详细看作品</p>
+        </div>
+        <div class="project">
+          <img
+            src="https://s2.loli.net/2024/07/15/yvo7CFaYNHQuhJ4.jpg"
+            alt="小清"
+          />
+          <h3>小清的网页</h3>
+          <a target="-blank" href="/xiaoqing/xiaoqing.html">前去看看</a>
+        </div>
+      </section>
+
+      <section id="blog">
+        <h2>博客</h2>
+        <article>
+          <h3>网站开篇</h3>
+          <p>今天下午，是我的网站诞生...</p>
+          <a href="/boke/index.html">阅读更多</a>
+        </article>
+        <article>
+          <h3>一次进步</h3>
+          <p>在我的不懈努力下...</p>
+          <a href="/boke/index.html">阅读更多</a>
+        </article>
+      </section>
+
+      <section id="contact">
+        <h2>联系我</h2>
+        <p>您可以通过以下方式与我取得联系：</p>
+        <p>电子邮箱：[1398720552@qq.com]</p>
+        <p>社交媒体：[暂无]</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Ethan网页. Ethan所有权利保留.</p>
+    </footer>
+
+    <script>
+      // 假设获取每日一言的 API 地址
+      const apiUrl = "https://v1.hitokoto.cn/";
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          const quoteDiv = document.getElementById("quote");
+          quoteDiv.innerHTML = `<p>${data.hitokoto} - ${data.from}</p>`;
+        })
+        .catch((error) => {
+          console.error("获取每日一言时出错:", error);
+        });
+    </script>
+  </body>
+</html>

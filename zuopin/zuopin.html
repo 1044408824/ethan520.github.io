@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>作品展示栏</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>作品</h1>
+      <nav>
+        <ul>
+          <li><a href="/zy.html">首页</a></li>
+          <li><a href="/zuopin/zuopin.html">作品</a></li>
+          <li><a href="/boke/boke.html">博客</a></li>
+          <li>
+            <a target="-blank" href="https://qm.qq.com/q/KKQOaTLVaW">联系我</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="works-container">
+      <div id="searchWrapper">
+        <label id="searchLabel">搜索</label>
+        <input type="text" id="searchInput" onkeyup="search()" />
+        <button id="searchButton"></button>
+      </div>
+      <div id="searchResults"></div>
+
+      <script>
+        // 本地内容数据
+        const localContents = [
+          {
+            name: "CatBox",
+            link: "https://lz.qaiu.top/parser?url=https://www.123pan.com/s/zOu0Vv-Jpu0A.html",
+          },
+          {
+            name: "阅读",
+            link: "https://lz.qaiu.top/parser?url=https://www.123pan.com/s/zOu0Vv-Ipu0A.html",
+          },
+          { name: "项目名字", link: "项目链接" },
+        ];
+
+        function search() {
+          const input = document.getElementById("searchInput").value;
+          const lowerCaseInput = input.toLowerCase(); // 存储输入的小写形式
+          const resultsDiv = document.getElementById("searchResults");
+
+          if (input === "") {
+            resultsDiv.style.display = "none";
+            return;
+          }
+
+          resultsDiv.innerHTML = "";
+
+          let found = false;
+
+          for (const content of localContents) {
+            const lowerCaseContent = content.name.toLowerCase(); // 存储内容名称的小写形式
+            if (lowerCaseContent.includes(lowerCaseInput)) {
+              // 使用小写形式进行比较
+              const p = document.createElement("p");
+              const a = document.createElement("a");
+              a.href = content.link;
+              a.textContent = content.name;
+              a.addEventListener("click", function (event) {
+                event.preventDefault();
+                window.open(content.link, "_blank");
+              });
+              p.appendChild(a);
+              resultsDiv.appendChild(p);
+              found = true;
+            }
+          }
+
+          if (found) {
+            resultsDiv.style.display = "block";
+          } else {
+            const p = document.createElement("p");
+            p.textContent = "未找到匹配的结果";
+            resultsDiv.appendChild(p);
+          }
+        }
+      </script>
+
+      <div class="work">
+        <img
+          src="https://s2.loli.net/2024/07/14/4mjGwIKtJ2filu6.jpg"
+          alt="CatBox"
+        />
+        <div class="work-info">
+          <h3>CatBox</h3>
+          <p>
+            《CatBoxTV版最新版》是一款功能强大的电视播放软件，拥有海量影视资源，涵盖了电视剧、电影、综艺等多个类别。通过CatBox，您可以轻松在线观看各类精彩内容，满足您的观影需求。需要注意，软件需要手动配置地址才能使用。<br />配置源：https://xhdwc.tk/0
+          </p>
+          <a
+            href="https://lz.qaiu.top/parser?url=https://www.123pan.com/s/zOu0Vv-Jpu0A.html"
+            download
+            >下载</a
+          >
+        </div>
+      </div>
+
+      <div class="work">
+        <img
+          src="https://s2.loli.net/2024/07/14/DBvNJ2n75uIGKwQ.jpg"
+          alt="阅读"
+        />
+        <div class="work-info">
+          <h3>阅读</h3>
+          <p>
+            阅读app官网正版下载可以让大家找到自己想看的小说，内置的书源基本可以满足大家看书的需求，能够搜索到各种各样的小说资源，无论是热门的冷门的这里都可以直接搜索，使用起来也是非常的轻松，全场免费阅读。
+          </p>
+          <a
+            href="https://lz.qaiu.top/parser?url=https://www.123pan.com/s/zOu0Vv-Ipu0A.html"
+            download
+            >下载</a
+          >
+        </div>
+      </div>
+
+      <div class="work">
+        <img src="work2-icon.jpg" alt="作品 2 图标" />
+        <div class="work-info">
+          <h3>作品 2 名称</h3>
+          <p>这是作品 2 的简要介绍。</p>
+          <a href="work2-download-link" download>下载</a>
+        </div>
+      </div>
+
+      <div class="work">
+        <img src="work3-icon.jpg" alt="作品 3 图标" />
+        <div class="work-info">
+          <h3>作品 3 名称</h3>
+          <p>这是作品 3 的简要介绍。</p>
+          <a href="work3-download-link" download>下载</a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 Ethan网页. Ethan所有权利保留.</p>
+    </footer>
+  </body>
+</html>

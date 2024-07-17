@@ -1,0 +1,120 @@
+.works-container {
+  width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+header {
+  background-color: #343a40;
+  color: #fff;
+  padding: 10px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+nav ul li a:hover {
+  background-color: #111;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 150px; /* 改为原来的一半，原为 300px */
+  font-size: 11px;
+}
+
+#searchResults {
+  padding: 10px;
+  border: 1px solid #ccc;
+  max-height: 100px;
+  overflow-y: auto;
+  display: none;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#searchWrapper {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 10px;
+}
+
+#searchLabel {
+  margin-right: 10px;
+}
+
+#searchButton {
+  width: 25px;
+  height: 25px;
+  background-image: url("https://s2.loli.net/2024/07/14/7WIGaPlNzFheoci.jpg");
+  background-size: cover;
+  border: none;
+  cursor: pointer;
+}
+
+.work {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.work img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.work-info h3 {
+  margin-top: 0;
+}
+
+.work-info p {
+  margin: 10px 0;
+}
+
+.work-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.work-info a:hover {
+  text-decoration: underline;
+}
+footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
